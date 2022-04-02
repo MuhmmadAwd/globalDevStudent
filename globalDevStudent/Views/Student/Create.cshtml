@@ -1,0 +1,53 @@
+﻿@model  globalDevStudent.GlobalDev.Entities.Student
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Student</h2>
+
+@using (Html.BeginForm("Create", "Student"))
+{
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(m => m.FirstName)
+                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.SecondName)
+                @Html.TextBoxFor(m => m.SecondName, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.ThirdName)
+                @Html.TextBoxFor(m => m.ThirdName, new { @class = "form-control" })
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(m => m.LastName)
+                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.country)
+                @Html.TextBoxFor(m => m.country, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.GraduatDate)
+                @Html.TextBoxFor(m => m.GraduatDate, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+            </div>
+            <div class="form-check">
+                Male :    @Html.RadioButtonFor(m => m.Gender, "Male", new { @class = "form-check-input" })
+                Female :   @Html.RadioButtonFor(m => m.Gender, "Female", new { @class = "form-check-label" })
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+
+
+
+
+}
